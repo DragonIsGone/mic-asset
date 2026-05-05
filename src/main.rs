@@ -41,10 +41,10 @@ fn get_outputs() -> cpal::Device {
 
     for device in devices {
         let name = device.name().unwrap_or_default();
+        // Detect Virtual Cable (windows) or Virtual / Loopback (Linux)
         if name.contains("CABLE") || name.contains("Virtual") || name.contains("Loopback") {
             return device;
         }
     }
-    host.default_output_device()
-        .unwrap()
+    host.default_output_device().unwrap()
 }

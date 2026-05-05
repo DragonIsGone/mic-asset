@@ -6,3 +6,5 @@ edition = "2024"
 [dependencies]
 vosk = "0.3.0"
 cpal = "0.15.0"
+anyhow = "1.0.102"
+whisper-rs = "0.16.0"
